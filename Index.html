@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Árbol de Navidad Moderno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="tree">
+    <div id="star">❤️</div>
+    <div class="level">
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/27.jfif" alt="Esfera 1" class="sphere">
+      <span class="light">M</span>
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/36.jfif" alt="Esfera 2" class="sphere">
+    </div>
+    <div class="level">
+      <span class="light">A</span>
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/35.jfif" alt="Esfera 3" class="sphere">
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/4.jfif" alt="Esfera 4" class="sphere">
+      <span class="light">J</span>
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/19.jfif" alt="Esfera 5" class="sphere">
+    </div>
+    <div class="level">
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/39.jfif" alt="Esfera 6" class="sphere">
+      <span class="light">O</span>
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/33.jfif" alt="Esfera 7" class="sphere">
+      <img src="https://raw.githubusercontent.com/yahziem/PequeWeb/main/Gl/fotos/34.jfif" alt="Esfera 8" class="sphere">
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="background-music" loop>
+    <source src="Audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
+  <!-- Botón para iniciar música -->
+  <button id="playButton" onclick="playMusic()">Iniciar Música</button>
+
+  <script>
+    // Función para reproducir la música
+    function playMusic() {
+      const music = document.getElementById('background-music');
+      music.play();
+      document.getElementById('playButton').style.display = 'none'; // Oculta el botón después de iniciar la música
+    }
+
+    // Reproducción automática al cargar la página si es posible (por ejemplo, después de un clic)
+    document.addEventListener('DOMContentLoaded', function() {
+      const music = document.getElementById('background-music');
+      music.loop = true;
+    });
+  </script>
+</body>
+</html>
