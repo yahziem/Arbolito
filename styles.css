@@ -12,17 +12,49 @@ body {
   overflow: hidden;
   text-align: center;
 }
+.logo {
+  text-align: center;
+  margin-top: 5px;
+}
 
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff6600;
+}
 /* Estilo para el texto de introducción (arriba) */
 #intro-text {
-  margin: 20px 0;
+  margin: 2px 0;
   padding: 10px;
-  width: 90%; /* Ajusta el ancho del texto */
+  width: 60%; /* Ajusta el ancho del texto para pantallas más grandes */
   text-align: center; /* Asegura que el texto esté centrado */
 }
 
 #intro-text h1 {
-  font-size: 5vw; /* Ajusta el tamaño del texto según la pantalla */
+  font-size: 2vw; /* Ajusta el tamaño del texto según la pantalla */
   animation: fadeIn 2s ease-in-out;
   margin: 0;
 }
@@ -31,12 +63,12 @@ body {
 #end-text {
   margin: 20px 0;
   padding: 10px;
-  width: 90%; /* Ajusta el ancho del texto */
+  width: 60%; /* Ajusta el ancho del texto para pantallas más grandes */
   text-align: center; /* Asegura que el texto esté centrado */
 }
 
 #end-text h2 {
-  font-size: 3vw; /* Ajusta el tamaño del texto */
+  font-size: 1vw; /* Ajusta el tamaño del texto */
   animation: fadeIn 2s ease-in-out;
   margin: 0;
 }
@@ -54,7 +86,7 @@ body {
 /* Estilo del árbol */
 #tree {
   position: relative;
-  width: 70vw; /* Ajusta el árbol para que ocupe un porcentaje del ancho de la pantalla */
+  width: 30vw; /* Ajusta el árbol para que ocupe un porcentaje del ancho de la pantalla */
   max-width: 600px;
   margin: auto;
   display: flex;
@@ -67,7 +99,7 @@ body {
 /* Estrella animada */
 #star {
   text-align: center;
-  font-size: 10vw; /* Ajusta el tamaño de la estrella */
+  font-size: 5vw; /* Ajusta el tamaño de la estrella */
   animation: pulse 1.5s infinite;
   color: #ffdf00;
   text-shadow: 0 0 20px rgba(255, 223, 0, 0.9);
@@ -81,8 +113,8 @@ body {
 }
 
 .sphere {
-  width: 10vw; /* Ajusta el tamaño de las esferas */
-  height: 10vw;
+  width: 9vw; /* Ajusta el tamaño de las esferas */
+  height: 9vw;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 8px;
@@ -98,7 +130,7 @@ body {
 
 /* Luces animadas (letras) */
 .light {
-  font-size: 5vw;
+  font-size: 3vw;
   font-weight: bold;
   animation: flicker 1.5s infinite;
   text-shadow: 0 0 15px rgb(212, 199, 199);
@@ -131,7 +163,6 @@ body {
   }
 }
 
-
 /* Consultas de medios para pantallas más pequeñas */
 @media (max-width: 600px) {
   #tree {
@@ -143,8 +174,8 @@ body {
   }
 
   .sphere {
-    width: 20vw; /* Aumenta el tamaño de las esferas */
-    height: 20vw; /* Aumenta el tamaño de las esferas */
+    width: 22vw; /* Aumenta el tamaño de las esferas */
+    height: 22vw; /* Aumenta el tamaño de las esferas */
   }
 
   .light {
@@ -152,15 +183,48 @@ body {
   }
 
   #intro-text h1 {
-    font-size: 12vw; /* Aumenta el tamaño del texto de introducción */
+    font-size: 5vw; /* Aumenta el tamaño del texto de introducción */
   }
 
   #end-text h2 {
-    font-size: 8vw; /* Ajusta el tamaño del texto final */
+    font-size: 4vw; /* Ajusta el tamaño del texto final */
   }
 
   #intro-text, #end-text {
     width: 90%;
     margin: 20px 0;
+  }
+}
+
+/* Consultas de medios para pantallas aún más pequeñas (Ej. dispositivos con pantallas de 320px o menos) */
+@media (max-width: 400px) {
+  #tree {
+    width: 90vw; /* Ajusta aún más el tamaño del árbol */
+  }
+
+  #star {
+    font-size: 18vw; /* Reduce aún más el tamaño de la estrella */
+  }
+
+  .sphere {
+    width: 25vw; /* Aumenta ligeramente las esferas */
+    height: 25vw; /* Aumenta ligeramente las esferas */
+  }
+
+  .light {
+    font-size: 12vw; /* Aumenta ligeramente las letras */
+  }
+
+  #intro-text h1 {
+    font-size: 15vw; /* Ajusta el tamaño del texto de introducción */
+  }
+
+  #end-text h2 {
+    font-size: 15vw; /* Ajusta el tamaño del texto final */
+  }
+
+  #intro-text, #end-text {
+    width: 90%;
+    margin: 15px 0;
   }
 }
