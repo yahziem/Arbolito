@@ -1,102 +1,166 @@
+/* Estilos generales */
 body {
-    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column; /* Apilar los elementos */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Estilo para el texto de introducción (arriba) */
+#intro-text {
+  margin: 20px 0;
+  padding: 10px;
+  width: 90%; /* Ajusta el ancho del texto */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+#intro-text h1 {
+  font-size: 5vw; /* Ajusta el tamaño del texto según la pantalla */
+  animation: fadeIn 2s ease-in-out;
+  margin: 0;
+}
+
+/* Estilo para el texto final (debajo) */
+#end-text {
+  margin: 20px 0;
+  padding: 10px;
+  width: 90%; /* Ajusta el ancho del texto */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+#end-text h2 {
+  font-size: 3vw; /* Ajusta el tamaño del texto */
+  animation: fadeIn 2s ease-in-out;
+  margin: 0;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  #tree {
-    position: relative;
-    width: 500px; /* Árbol más grande */
-    margin: auto;
+  100% {
+    opacity: 1;
   }
-  
-  #star {
-    text-align: center;
-    font-size: 4rem; /* Estrella más grande */
-    animation: pulse 1.5s infinite;
-    color: #ffdf00;
-    text-shadow: 0 0 20px rgba(255, 223, 0, 0.9);
+}
+
+/* Estilo del árbol */
+#tree {
+  position: relative;
+  width: 70vw; /* Ajusta el árbol para que ocupe un porcentaje del ancho de la pantalla */
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 30px; /* Agregar espacio en la parte inferior */
+}
+
+/* Estrella animada */
+#star {
+  text-align: center;
+  font-size: 10vw; /* Ajusta el tamaño de la estrella */
+  animation: pulse 1.5s infinite;
+  color: #ffdf00;
+  text-shadow: 0 0 20px rgba(255, 223, 0, 0.9);
+}
+
+/* Niveles de esferas */
+.level {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0; /* Mayor espacio entre los niveles */
+}
+
+.sphere {
+  width: 10vw; /* Ajusta el tamaño de las esferas */
+  height: 10vw;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border: 3px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.sphere:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Luces animadas (letras) */
+.light {
+  font-size: 5vw;
+  font-weight: bold;
+  animation: flicker 1.5s infinite;
+  text-shadow: 0 0 15px rgb(212, 199, 199);
+  margin: 0 10px;
+}
+
+/* Animación de pulsación de la estrella */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  .level {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-  }
-  
-  .sphere {
-    width: 100px; /* Esferas más grandes */
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border: 3px solid #fff;
-    transition: transform 0.3s ease;
-  }
-  
-  .sphere:hover {
+  50% {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
   }
-  
-  /* Luces animadas */
+}
+
+/* Animación de parpadeo de las luces (letras) */
+@keyframes flicker {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+
+/* Consultas de medios para pantallas más pequeñas */
+@media (max-width: 600px) {
+  #tree {
+    width: 80vw; /* Aumenta el tamaño del árbol */
+  }
+
+  #star {
+    font-size: 15vw; /* Ajusta el tamaño de la estrella */
+  }
+
+  .sphere {
+    width: 20vw; /* Aumenta el tamaño de las esferas */
+    height: 20vw; /* Aumenta el tamaño de las esferas */
+  }
+
   .light {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-    animation: flicker 1.5s infinite;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    margin: 0 8px;
+    font-size: 10vw; /* Aumenta el tamaño de las letras */
   }
-  
-  .light:nth-child(1) {
-    animation-delay: 0.2s;
-    color: #ff0000;
+
+  #intro-text h1 {
+    font-size: 12vw; /* Aumenta el tamaño del texto de introducción */
   }
-  
-  .light:nth-child(2) {
-    animation-delay: 0.4s;
-    color: #00ff00;
+
+  #end-text h2 {
+    font-size: 8vw; /* Ajusta el tamaño del texto final */
   }
-  
-  .light:nth-child(3) {
-    animation-delay: 0.6s;
-    color: #0000ff;
+
+  #intro-text, #end-text {
+    width: 90%;
+    margin: 20px 0;
   }
-  
-  .light:nth-child(4) {
-    animation-delay: 0.8s;
-    color: #ffff00;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-  
-  @keyframes flicker {
-    0% {
-      opacity: 0.6;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-    100% {
-      opacity: 0.8;
-      transform: scale(1);
-    }
-  }
-  
+}
