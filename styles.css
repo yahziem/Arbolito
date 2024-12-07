@@ -1,29 +1,33 @@
 /* Estilos generales */
 body {
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column; /* Apilar los elementos */
-  justify-content: center;
+  justify-content: flex-start; /* Cambiar a flex-start para que el contenido no se amontone */
   align-items: center;
   height: 100vh;
-  margin: 0;
-  overflow: hidden;
+  margin: 0;  
+  padding: 20px 0; /* Agregar algo de padding para no pegar el contenido */
+  overflow: auto; /* Permite el scroll */
   text-align: center;
 }
+
 .logo {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 20px; /* Agregar margen en la parte superior */
 }
 
 .logo img {
-  width: 100px;
+  width: 100px; /* Tamaño de logo para pantallas móviles */
   height: 100px;
 }
 
+/* Asegura que la navegación no se sobreponga */
 nav {
   text-align: center;
+  margin-top: 20px; /* Agregar algo de margen superior */
 }
 
 nav ul {
@@ -45,6 +49,37 @@ nav ul li a {
 nav ul li a:hover {
   color: #ff6600;
 }
+
+/* Consultas de medios para pantallas grandes (PC) */
+@media (min-width: 1024px) {
+  /* Aumentar el tamaño del logo solo en pantallas grandes */
+  .logo img {
+    width: 200px; /* Aumenta el tamaño del logo */
+    height: 200px;
+  }
+
+  /* Aumentar el tamaño de la navegación y mejorar el diseño */
+  nav {
+    margin-top: 20px; /* Espacio superior para mejor separación */
+  }
+
+  nav ul {
+    font-size: 20px; /* Aumenta el tamaño de las letras del menú */
+  }
+
+  nav ul li {
+    margin: 0 20px; /* Espaciado más grande entre los elementos del menú */
+  }
+
+  nav ul li a {
+    font-size: 40px; /* Aumenta el tamaño del texto en el menú */
+  }
+
+  nav ul li a:hover {
+    color: #ff6600;
+  }
+}
+
 /* Estilo para el texto de introducción (arriba) */
 #intro-text {
   margin: 2px 0;
