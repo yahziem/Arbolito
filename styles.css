@@ -54,17 +54,17 @@ nav ul li a:hover {
 @media (min-width: 1024px) {
   /* Aumentar el tamaño del logo solo en pantallas grandes */
   .logo img {
-    width: 200px; /* Aumenta el tamaño del logo */
-    height: 200px;
+    width: 100px; /* Aumenta el tamaño del logo */
+    height: 100px;
   }
 
   /* Aumentar el tamaño de la navegación y mejorar el diseño */
   nav {
-    margin-top: 20px; /* Espacio superior para mejor separación */
+    margin-top: 10px; /* Espacio superior para mejor separación */
   }
 
   nav ul {
-    font-size: 20px; /* Aumenta el tamaño de las letras del menú */
+    font-size: 10px; /* Aumenta el tamaño de las letras del menú */
   }
 
   nav ul li {
@@ -72,7 +72,7 @@ nav ul li a:hover {
   }
 
   nav ul li a {
-    font-size: 40px; /* Aumenta el tamaño del texto en el menú */
+    font-size: 20px; /* Aumenta el tamaño del texto en el menú */
   }
 
   nav ul li a:hover {
@@ -103,7 +103,7 @@ nav ul li a:hover {
 }
 
 #end-text h2 {
-  font-size: 1vw; /* Ajusta el tamaño del texto */
+  font-size: 2vw; /* Ajusta el tamaño del texto */
   animation: fadeIn 2s ease-in-out;
   margin: 0;
 }
