@@ -29,28 +29,28 @@
     </div>
   </div>
 
-  <!-- Audio -->
-  <audio id="background-music" loop>
+  <!-- Audio en bucle -->
+  <audio id="audioLoop" loop>
     <source src="Audio.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
+    Tu navegador no soporta el elemento de audio.
   </audio>
 
-  <!-- Botón para iniciar música -->
-  <button id="playButton" onclick="playMusic()">Iniciar Música</button>
-
   <script>
-    // Función para reproducir la música
-    function playMusic() {
-      const music = document.getElementById('background-music');
-      music.play();
-      document.getElementById('playButton').style.display = 'none'; // Oculta el botón después de iniciar la música
+    // Reproducción de música con interacción del usuario
+    function enableAudioPlayback() {
+      const music = document.getElementById('audioLoop');
+      music.play()
+        .then(() => {
+          console.log("Audio reproducido automáticamente.");
+          document.body.removeEventListener('click', enableAudioPlayback); // Desactiva el evento después de la reproducción
+        })
+        .catch((error) => {
+          console.warn("El navegador bloqueó la reproducción automática. Se requiere interacción manual:", error);
+        });
     }
 
-    // Reproducción automática al cargar la página si es posible (por ejemplo, después de un clic)
-    document.addEventListener('DOMContentLoaded', function() {
-      const music = document.getElementById('background-music');
-      music.loop = true;
-    });
+    // Esperar interacción del usuario para habilitar el audio
+    document.body.addEventListener('click', enableAudioPlayback);
   </script>
 </body>
 </html>
